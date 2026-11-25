@@ -1,224 +1,161 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ja" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <title>Haruka Profile</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <meta charset="utf-8">
+  <script>
+    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, "js");
+    window.setTimeout(function () {
+      var layer = document.getElementById("intro-layer");
+      if (layer) layer.classList.add("done");
+    }, 3000);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7dcef">
+  <meta name="description" content="北海学園大学で経営を学びながら、アイデアを形にする佐藤陽実のポートフォリオ。活動とチームプロジェクト ProcessNote を紹介します。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HARUMI SATO — Turning ideas into reality.">
+  <meta property="og:description" content="佐藤陽実のプロフィール、活動、チームプロジェクト ProcessNote。">
+  <meta property="og:image" content="assets/profile-photo.jpg">
+  <title>HARUMI SATO — Turning ideas into reality.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ffe0f7, #e0f7ff);
+    :root {
+      --pink:#f9cde5; --lavender:#dccaf8; --ice:#d4f2ff; --silver:#dce1eb;
+      --white:#fff9fd; --ink:#51445f; --rose:#d975ad; --plum:#8565a6;
+      --glass:rgba(255,249,253,.68); --line:rgba(255,255,255,.82);
+      --ease:cubic-bezier(.2,.75,.25,1); --speed:700ms; --float:8s;
+      --page:min(1100px, calc(100vw - 11rem));
     }
-
-    .profile-img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 20px;
-}
-
-    .card {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      width: 380px;
-      text-align: center;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-
-      margin: 60px auto; 
-    }
-
-    h1 {
-      margin-bottom: 5px;
-    }
-
-    .basic-info {
-      margin-bottom: 20px;
-      color: #555;
-    }
-
-    .section {
-      margin-top: 20px;
-      text-align: left;
-    }
-
-    .section h3 {
-      margin-bottom: 5px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 10px;
-      background: #ff7bd5;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.skill-tag {
-  background: #ffe6fa;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.social-links {
-  margin-top: 15px;
-}
-
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 50px;
-  height: 50px;
-
-  margin: 0 10px;
-  background-color: #ff8fab;
-  color: white;
-
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 22px;
-
-  transition: 0.3s;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.social-links a:hover {
-  transform: scale(1.1);
-  background-color: #ff5c8a;
-}
-
-.contest-section {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contest-card {
-  background-color: white;
-  padding: 25px;
-  margin: 20px 0;
-  width: 85%;
-  max-width: 400px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.contest-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 18px;
-  background-color: #ff8fab;
-  color: white;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-.contest-btn:hover {
-  background-color: #ff5c8a;
-  transform: scale(1.05);
-}
-
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+    html.no-js{scroll-behavior:auto}
+    .no-js .intro-layer{display:none}
+    body{margin:0;color:var(--ink);font-family:"Zen Maru Gothic",sans-serif;background:#f5e8f7;overflow-x:hidden}
+    a{color:inherit} button,a{-webkit-tap-highlight-color:transparent}
+    a:focus-visible,button:focus-visible{outline:3px solid #a779cc;outline-offset:4px;border-radius:12px}
+    .skip{position:fixed;z-index:1000;top:12px;left:12px;padding:10px 16px;background:white;border-radius:20px;transform:translateY(-160%)}.skip:focus{transform:none}
+    .world{position:fixed;inset:0;z-index:-3;overflow:hidden;background:radial-gradient(ellipse at 16% 15%,rgba(255,255,255,.92),transparent 32%),radial-gradient(ellipse at 82% 18%,rgba(212,242,255,.72),transparent 35%),radial-gradient(ellipse at 76% 92%,rgba(220,202,248,.86),transparent 40%),linear-gradient(135deg,#f9cde5,#eadcf8 52%,#d4f2ff);transition:filter 1.2s ease}
+    .world:before{content:"";position:absolute;inset:-20%;opacity:.34;background-image:radial-gradient(#fff 1px,transparent 1.6px),radial-gradient(rgba(255,255,255,.9) 1px,transparent 1.5px);background-size:73px 73px,113px 113px;background-position:0 0,27px 39px;animation:starDrift 38s linear infinite}
+    .world:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.23) 49%,transparent 62%);transform:translateX(-100%);animation:aurora 15s ease-in-out infinite}
+    .orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.58;animation:float var(--float) ease-in-out infinite}.orb.one{width:230px;height:230px;left:-70px;top:22%;background:radial-gradient(circle at 35% 35%,#fff,rgba(255,255,255,0) 70%),linear-gradient(135deg,#f4a9d2,#c7baf7);box-shadow:inset -18px -14px 30px #c28bc455,0 18px 65px #dfb9e888}.orb.two{width:160px;height:160px;right:10%;bottom:-35px;background:radial-gradient(circle at 32% 25%,#fff,transparent 67%),linear-gradient(145deg,#c9eeff,#efd7ff);animation-delay:-3s}
+    .floaty{position:absolute;color:rgba(255,255,255,.88);filter:drop-shadow(0 4px 10px #b875bf55);font-family:serif;animation:float 7s ease-in-out infinite;pointer-events:none}.f1{top:13%;left:7%;font-size:36px}.f2{right:9%;top:30%;font-size:22px;animation-delay:-3s}.f3{left:13%;bottom:15%;font-size:24px;animation-delay:-5s}.f4{right:14%;bottom:12%;font-size:40px;animation-delay:-1s}
+    .sparkle-field{position:absolute;inset:0;pointer-events:none}.sparkle-field i{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 10px 3px #fff;animation:twinkle 2.7s ease-in-out infinite}.sparkle-field i:nth-child(1){left:22%;top:28%}.sparkle-field i:nth-child(2){left:77%;top:13%;animation-delay:.7s}.sparkle-field i:nth-child(3){left:90%;top:70%;animation-delay:1.3s}.sparkle-field i:nth-child(4){left:42%;top:84%;animation-delay:1.8s}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-18px) rotate(3deg)}}@keyframes starDrift{to{background-position:240px 200px,-130px 180px}}@keyframes aurora{0%,65%,100%{transform:translateX(-110%)}85%{transform:translateX(110%)}}@keyframes twinkle{0%,100%{opacity:.25;transform:scale(.7)}50%{opacity:1;transform:scale(1.45)}}
+    .ribbon{position:relative;width:48px;height:28px;display:inline-block;filter:drop-shadow(0 5px 4px #b2679d40)}.ribbon:before,.ribbon:after{content:"";position:absolute;top:1px;width:25px;height:19px;border:3px solid #fff9fd;border-radius:80% 20% 70% 30%;background:linear-gradient(135deg,#fff,#edaed5 68%,#d7baf5);box-shadow:inset 2px 2px 4px #fff}.ribbon:before{left:0;transform:rotate(22deg)}.ribbon:after{right:0;transform:scaleX(-1) rotate(22deg)}.ribbon b{position:absolute;z-index:1;left:19px;top:9px;width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,#fff,#ce89b7);border:1px solid white}.ribbon em{position:absolute;top:15px;left:15px;width:9px;height:18px;background:linear-gradient(90deg,#f7d3e7,#fff);clip-path:polygon(0 0,100% 0,78% 100%,35% 80%)}.ribbon em:last-child{left:26px;transform:scaleX(-1)}
+    .side-nav{position:fixed;z-index:20;right:2.2vw;top:50%;transform:translateY(-50%);display:grid;gap:13px}.side-nav a{display:grid;grid-template-columns:25px 1fr;align-items:center;gap:9px;width:158px;padding:10px 13px;text-decoration:none;font:700 9px/1.25 "DM Sans",sans-serif;letter-spacing:.11em;color:#786786;background:rgba(255,255,255,.43);border:1px solid #fff9;border-radius:18px;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);transition:transform .25s,background .25s,box-shadow .25s}.side-nav a span{font-size:10px;color:#b47fae}.side-nav a:before{content:"♡";grid-column:1;grid-row:1;color:#c783b8;font-size:17px;text-align:center}.side-nav a span{grid-column:2}.side-nav a.active,.side-nav a:hover{background:rgba(255,255,255,.82);box-shadow:0 7px 22px #b97ab833;transform:translateX(-4px)}.side-nav a.active:before{content:"♥";text-shadow:0 0 10px #eeacd4}
+    main{position:relative}.screen{min-height:100vh;min-height:100svh;padding:68px 0 54px;display:grid;place-items:center;scroll-snap-align:start;position:relative}.wrap{width:var(--page);margin:auto;position:relative}.eyebrow{display:flex;align-items:center;gap:11px;font:700 11px "DM Sans",sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#916f9f}.eyebrow:before{content:"";width:27px;height:1px;background:linear-gradient(90deg,#ce85b6,#c8a6e9)}.intro-card,.glass{background:var(--glass);border:1px solid var(--line);box-shadow:0 22px 80px #9b77a528,inset 0 1px 0 #fff;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+    .intro{padding:28px 0}.intro-card{min-height:min(700px,calc(100vh - 92px));min-height:min(700px,calc(100svh - 92px));border-radius:38px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:clamp(28px,5.4vw,78px);position:relative;overflow:hidden}.intro-card:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-130px;top:-150px;background:radial-gradient(circle,#fff9 0,rgba(255,255,255,0) 70%);pointer-events:none}.intro-copy{position:relative;z-index:2}.intro-copy .eyebrow{margin-bottom:28px}.intro h1{margin:0;font:800 clamp(42px,7vw,88px)/.92 "DM Sans",sans-serif;letter-spacing:-.075em;color:#8c68a7;text-shadow:0 2px #fff,0 9px 25px #b68cb744}.intro h1 span{display:block;background:linear-gradient(115deg,#a36b9c,#d98bb8 52%,#917cc1);background-clip:text;-webkit-background-clip:text;color:transparent}.jp-name{margin:24px 0 10px;font-size:clamp(24px,3vw,34px);font-weight:900;letter-spacing:.12em}.tagline{margin:0 0 18px;font:700 18px "DM Sans",sans-serif;letter-spacing:.015em;color:#9569a1}.school{margin:0;color:#746780;font-size:14px;line-height:1.9}.social-row{display:flex;gap:11px;margin-top:28px;flex-wrap:wrap}.pill{display:inline-flex;gap:10px;align-items:center;text-decoration:none;border:1px solid #fff;background:linear-gradient(140deg,#fff9,#f8e5f4cc);border-radius:999px;padding:12px 19px;font:700 12px "DM Sans","Zen Maru Gothic",sans-serif;color:#775f86;box-shadow:0 7px 0 #ddc7e7,0 12px 24px #9d75a522;transition:transform .25s var(--ease),box-shadow .25s}.pill:hover{transform:translateY(-4px) scale(1.025);box-shadow:0 10px 0 #d8bce3,0 16px 30px #9d75a544}.pill .icon{color:#ce78ab;font-size:17px}
+    .portrait-stage{min-height:460px;position:relative;display:grid;place-items:center}.photo-frame{position:relative;width:min(100%,360px);padding:13px 13px 50px;border-radius:15px;background:linear-gradient(140deg,#fff,#fff8fd 40%,#f5e5f4);transform:rotate(3deg);box-shadow:0 25px 48px #8061873b,0 0 0 1px #fff;transition:transform .7s var(--ease)}.photo-frame:hover{transform:rotate(0) translateY(-7px)}.photo-frame:after{content:"HARUMI / 2025";position:absolute;bottom:16px;left:0;right:0;text-align:center;font:700 10px "DM Sans",sans-serif;letter-spacing:.2em;color:#a688a7}.photo-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 44%;border-radius:7px}.orbit{position:absolute;inset:8% 5%;border:1px solid #fff9;border-radius:50%;transform:rotate(-20deg);pointer-events:none}.orbit:before,.orbit:after{content:"";position:absolute;width:8px;height:8px;border:2px solid white;border-radius:50%;background:#e8b4de;box-shadow:0 0 15px 5px #fff}.orbit:before{top:13%;left:13%}.orbit:after{bottom:10%;right:11%;background:#b9c8f3}.stage-ribbon{position:absolute;top:4%;right:4%;transform:rotate(22deg) scale(1.4)}.badge{position:absolute;left:2%;bottom:11%;width:88px;height:88px;display:grid;place-items:center;text-align:center;border-radius:50%;font:700 9px/1.3 "DM Sans",sans-serif;letter-spacing:.13em;color:#80658b;background:linear-gradient(145deg,#fff9,#f2dff5cc);border:1px solid white;box-shadow:0 8px 25px #a574bb33;transform:rotate(-12deg)}.scroll-cue{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font:700 9px "DM Sans",sans-serif;letter-spacing:.25em;color:#9d82a6;white-space:nowrap}.scroll-cue:after{content:"↓";display:block;text-align:center;font-size:17px;animation:float 1.8s ease-in-out infinite}
+    .activities .wrap{padding:34px 0}.section-head{margin:0 0 34px;display:flex;justify-content:space-between;align-items:end;gap:20px}.section-head h2,.contact h2{font:800 clamp(40px,6vw,68px)/.95 "DM Sans",sans-serif;letter-spacing:-.065em;margin:14px 0 0;color:#85649d}.section-head p{max-width:360px;margin:0;color:#766981;font-size:13px;line-height:1.9}.activity-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.activity-card{min-height:340px;border-radius:30px;padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;transition:transform .35s var(--ease),box-shadow .35s}.activity-card:first-child{background:linear-gradient(135deg,#fffafcdd,#f4e7f5dd)}.activity-card:last-child{background:linear-gradient(135deg,#f4f0ffdd,#e8f7ffdd)}.activity-card:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-65px;top:-62px;background:radial-gradient(circle,#fff9,transparent 70%);pointer-events:none}.activity-card:hover{transform:translateY(-7px) rotate(-.3deg);box-shadow:0 25px 55px #9b77a533}.activity-top{display:flex;justify-content:space-between;align-items:start}.activity-num{font:700 11px "DM Sans";letter-spacing:.2em;color:#a37db1}.activity-mark{font-size:26px;color:#d18ebd}.activity-card h3{margin:22px 0 4px;font-size:25px;line-height:1.25}.activity-card .en{font:700 12px "DM Sans";letter-spacing:.12em;color:#9e7bae}.activity-card p{margin:15px 0 20px;max-width:390px;font-size:13px;line-height:1.9;color:#746a7e}.detail-link{align-self:start;text-decoration:none;font:700 10px "DM Sans";letter-spacing:.16em;padding:12px 16px;border-radius:99px;background:linear-gradient(130deg,#fff,#f8eafa);border:1px solid white;box-shadow:0 5px 0 #e2cbe8;transition:.25s}.detail-link:hover{transform:translateY(-3px);box-shadow:0 8px 0 #dec1e5}.activities-foot{font-size:10px;color:#8c7c93;margin:17px 0 0}
+    .project .wrap{width:min(1120px,calc(100vw - 10rem))}.project-layout{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(24px,5vw,65px);align-items:center}.project-copy{padding:20px 0}.team-tag{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:99px;background:#fff9;border:1px solid #fff;font:700 10px "DM Sans";letter-spacing:.18em;color:#9a72a5}.team-tag:before{content:"✦";color:#cf85b8}.project h2{font:800 clamp(56px,9vw,102px)/.87 "DM Sans",sans-serif;letter-spacing:-.09em;margin:24px 0 23px;background:linear-gradient(120deg,#8d69a4,#d47fa9 55%,#a48cd0);background-clip:text;-webkit-background-clip:text;color:transparent}.project-intro{font-size:16px;line-height:1.9;font-weight:700;margin:0 0 25px}.contribution{padding:18px 20px;border-left:2px solid #d495c3;background:#fff7;border-radius:0 18px 18px 0}.contribution h3{margin:0 0 10px;font:700 11px "DM Sans";letter-spacing:.18em;color:#956e9c}.contribution p{margin:0;font-size:12px;line-height:1.9}.contribution b{color:#a35f92}.project-link{margin-top:23px}.project-visual{position:relative;padding:18px;border-radius:30px;background:linear-gradient(145deg,#ffffffbd,#e8d8ef77);border:1px solid white;box-shadow:0 25px 65px #9778a92d;transform:rotate(1.5deg);transition:transform .8s var(--ease),opacity .8s;overflow:hidden}.project-visual:hover{transform:rotate(0) scale(1.025)}.project-visual img{display:block;width:100%;height:auto;border-radius:17px;box-shadow:0 10px 30px #715d7624}.project-visual:after{content:"PROCESS / REFLECT / GROW";position:absolute;right:30px;bottom:28px;padding:9px 12px;background:#fffD;border-radius:99px;font:700 8px "DM Sans";letter-spacing:.16em;color:#9273a1}.visual-caption{text-align:right;margin:12px 5px 0;font:600 9px "DM Sans";letter-spacing:.11em;color:#887895}
+    .contact .wrap{width:min(900px,calc(100vw - 10rem))}.contact-panel{text-align:center;position:relative;padding:clamp(48px,9vw,105px) 30px;border-radius:42px;background:linear-gradient(145deg,#fff9fdee,#f6e8fbdd 57%,#e3f4ffdd);border:1px solid white;box-shadow:0 25px 90px #9f79b333,inset 0 1px 0 white;overflow:hidden}.contact-panel:before,.contact-panel:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,#fff9,transparent 70%)}.contact-panel:before{left:-110px;top:-100px}.contact-panel:after{right:-90px;bottom:-120px}.contact-heart{font-size:40px;color:#dd91c4;filter:drop-shadow(0 7px 12px #c87fac55);animation:float 5s ease-in-out infinite}.contact h2{font-size:clamp(54px,9vw,94px);margin:16px 0 20px;background:linear-gradient(110deg,#dc84b2,#a58acb,#8abbd1);background-clip:text;-webkit-background-clip:text;color:transparent}.contact-copy{position:relative;z-index:1;margin:0 auto;max-width:540px;font-size:14px;line-height:2.1}.contact .social-row{justify-content:center;margin:30px 0 0}.contact .pill{padding:15px 24px;font-size:13px}.thankyou{margin:34px 0 0;font:700 10px "DM Sans";letter-spacing:.28em;color:#997fa5}.back-top{display:inline-flex;margin-top:27px;padding:10px 17px;border:1px solid #fff;border-radius:99px;text-decoration:none;background:#fff8;font:700 10px "DM Sans";letter-spacing:.13em;transition:.2s}.back-top:hover{transform:translateY(-3px);background:white}.footer{position:absolute;bottom:16px;left:0;right:0;text-align:center;font:500 9px "DM Sans";letter-spacing:.1em;color:#a18fa9}
+    .reveal{opacity:1;transform:none}
+    .motion-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+    .motion-ready .reveal.visible{opacity:1;transform:translateY(0)}
+    .motion-ready .intro-card .portrait-stage.reveal{transform:translateX(25px) rotate(2deg)}
+    .motion-ready .intro-card .portrait-stage.reveal.visible{transform:translateX(0) rotate(0)}.activity-card:nth-child(2){transition-delay:.14s}.activity-card:nth-child(3){transition-delay:.28s}.activity-card:nth-child(4){transition-delay:.42s}
+    .intro-layer{position:fixed;z-index:100;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#f9cde5,#dccaf8 55%,#d4f2ff);transition:opacity .65s ease,visibility .65s}.intro-layer.done{opacity:0;visibility:hidden}.intro-loader{position:relative;text-align:center;color:#7d6492}.loader-heart{font-size:42px;display:block;animation:heartbeat 1s ease-in-out infinite}.loader-title{font:800 clamp(16px,3vw,24px) "DM Sans";letter-spacing:.14em}.loader-name{margin-top:12px;font:700 10px "DM Sans";letter-spacing:.28em;color:#9b80a7}.loader-line{margin:22px auto 0;width:150px;height:2px;background:#fff8;border-radius:5px;overflow:hidden}.loader-line:after{content:"";display:block;height:100%;width:45%;background:#fff;box-shadow:0 0 12px white;animation:loadline 1.15s ease-in-out forwards}@keyframes loadline{to{transform:translateX(230%)}}@keyframes heartbeat{50%{transform:scale(1.18)}}
+    @media(max-width:900px){:root{--page:min(760px,calc(100vw - 5rem))}.side-nav{right:10px}.side-nav a{width:120px;font-size:8px;grid-template-columns:20px 1fr;padding:9px}.intro-card{padding:36px;grid-template-columns:1.05fr .95fr}.portrait-stage{min-height:380px}.photo-frame{width:min(100%,310px)}.project .wrap{width:calc(100vw - 5rem)}.project-layout{gap:25px}.activity-card{padding:24px}}
+    @media(max-width:640px){:root{--page:calc(100vw - 30px)}html{scroll-snap-type:y proximity}.screen{padding:38px 0 66px;min-height:100svh}.side-nav{top:auto;bottom:10px;left:50%;right:auto;transform:translateX(-50%);display:flex;gap:5px;padding:6px;background:#fff9;border:1px solid white;border-radius:99px;box-shadow:0 7px 25px #9976a92c;backdrop-filter:blur(15px)}.side-nav a{display:flex;justify-content:center;width:auto;min-width:61px;gap:4px;padding:8px 9px;border:0;border-radius:99px;background:transparent;font-size:7px;letter-spacing:.04em}.side-nav a:before{font-size:12px}.side-nav a span{font-size:7px}.side-nav a.active,.side-nav a:hover{transform:none;background:#fff}.intro{padding-top:18px}.intro-card{min-height:auto;grid-template-columns:1fr;padding:30px 24px 52px;border-radius:28px;gap:10px}.intro-copy .eyebrow{margin-bottom:18px}.intro h1{font-size:clamp(46px,13vw,72px)}.jp-name{font-size:25px;margin:16px 0 6px}.tagline{font-size:15px;margin-bottom:10px}.school{font-size:12px}.social-row{margin-top:18px}.pill{padding:10px 15px}.portrait-stage{min-height:330px;margin-top:4px}.photo-frame{width:min(70vw,270px);padding:9px 9px 40px}.photo-frame:after{bottom:12px;font-size:8px}.badge{width:69px;height:69px;font-size:8px;left:7%;bottom:8%}.stage-ribbon{right:9%;top:0;transform:scale(1.1) rotate(22deg)}.scroll-cue{bottom:12px;font-size:8px}.section-head{display:block;margin-bottom:22px}.section-head h2{font-size:49px}.section-head p{margin-top:14px;font-size:12px}.activity-grid{grid-template-columns:1fr;gap:12px}.activity-card{min-height:270px;padding:23px;border-radius:23px}.activity-card h3{font-size:22px;margin-top:16px}.activity-card p{font-size:12px;margin:12px 0 16px}.activities-foot{font-size:9px}.project .wrap{width:calc(100vw - 34px)}.project-layout{grid-template-columns:1fr;gap:20px}.project-copy{padding:5px 4px 0}.project h2{font-size:72px;margin:18px 0}.project-intro{font-size:14px;margin-bottom:17px}.contribution{padding:14px 16px}.contribution p{font-size:11px}.project-visual{grid-row:2;padding:11px;border-radius:22px}.project-visual:after{right:20px;bottom:20px;font-size:7px}.visual-caption{font-size:8px}.contact .wrap{width:calc(100vw - 30px)}.contact-panel{padding:55px 20px 66px;border-radius:30px}.contact h2{font-size:58px}.contact-copy{font-size:12px}.contact .pill{font-size:11px;padding:12px 16px}.thankyou{font-size:8px}.footer{bottom:73px;font-size:8px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal,.motion-ready .reveal{opacity:1;transform:none}}
   </style>
 </head>
-
 <body>
-
-  <div class="card">
-    <img src="images/profile.jpg" alt="プロフィール写真" class="profile-img">
-    <h1>佐藤　陽実</h1>
-
-    <div class="basic-info">
-      <div>北海学園大学</div>
-      <div>経営学部</div>
-      <div>大学2年生</div>
-
-      <div class="social-links">
-        <a href="https://instagram.com/_m__123o" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-      
-        <a href="https://github.com/harumi-dev" target="_blank">
-          <i class="fa-brands fa-github"></i>
-        </a>
+  <a class="skip" href="#intro">メインコンテンツへ</a>
+  <div class="world" aria-hidden="true"><div class="orb one"></div><div class="orb two"></div><span class="floaty f1">✧</span><span class="floaty f2">♡</span><span class="floaty f3">✦</span><span class="floaty f4">୨୧</span><div class="sparkle-field"><i></i><i></i><i></i><i></i></div></div>
+  <div class="intro-layer" id="intro-layer" aria-hidden="true"><div class="intro-loader"><span class="loader-heart">♡</span><div class="loader-title">Loading...</div><div class="loader-name">HARUMI SATO · CREATIVE PORTFOLIO</div><div class="loader-line"></div></div></div>
+  <nav class="side-nav" aria-label="セクションナビゲーション">
+    <a href="#intro" class="active"><span>01 INTRODUCTION</span></a><a href="#activities"><span>02 ACTIVITIES</span></a><a href="#projects"><span>03 PROJECTS</span></a><a href="#contact"><span>04 CONTACT</span></a>
+  </nav>
+  <main>
+    <section class="screen intro" id="intro" aria-labelledby="intro-title"><div class="wrap intro-card">
+      <div class="intro-copy"><div class="eyebrow">A little space to meet me</div><h1 id="intro-title"><span>HARUMI</span><span>SATO</span></h1><p class="jp-name">佐藤 陽実</p><p class="tagline">Turning ideas into reality.</p><p class="school">北海学園大学 経営学部 経営学科 2年</p>
+        <div class="social-row"><a class="pill" href="https://www.instagram.com/_m__123o" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true">♡</span>Instagram ↗</a><a class="pill" href="https://github.com/harumi-dev" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true">⌘</span>GitHub ↗</a></div>
       </div>
+      <div class="portrait-stage reveal"><div class="orbit"></div><div class="photo-frame"><img src="assets/profile-photo.jpg" alt="ビジネスコンテスト会場で名札を持つ佐藤陽実" fetchpriority="high"></div><span class="ribbon stage-ribbon" aria-hidden="true"><b></b><em></em><em></em></span><div class="badge">IDEAS<br>IN MOTION<br>✦ 2025 ✦</div></div>
+      <div class="scroll-cue">SCROLL TO EXPLORE</div>
+    </div></section>
+    <section class="screen activities" id="activities" aria-labelledby="activities-title"><div class="wrap">
+      <header class="section-head reveal"><div><div class="eyebrow">Things I've been part of</div><h2 id="activities-title">ACTIVITIES</h2></div><p>人とアイデアが出会う場所で、企画を考え、チームで形にする経験を重ねています。</p></header>
+      <div class="activity-grid">
+        <article class="activity-card glass reveal"><div><div class="activity-top"><span class="activity-num">ACTIVITY / 01</span><span class="activity-mark" aria-hidden="true">✧</span></div><h3>北海道起業家甲子園 2025</h3><div class="en">HOKKAIDO ENTREPRENEUR KOSHIEN</div><p>北海道起業家甲子園 2025 に参加。アイデアを発表する機会を通じて、起業や事業づくりに触れました。</p></div><a class="detail-link" href="https://www.soumu.go.jp/soutsu/hokkaido/C/u-Land/20251217.html" target="_blank" rel="noopener noreferrer">VIEW DETAILS ↗</a></article>
+        <article class="activity-card glass reveal"><div><div class="activity-top"><span class="activity-num">ACTIVITY / 02</span><span class="activity-mark" aria-hidden="true">♡</span></div><h3>LLP Hokkaido 2025</h3><div class="en">LEAN LAUNCHPAD PROGRAM</div><p>道内学生向けの実践型プログラムにチームで参加。Process Note を提案し、DemoDayで最優秀賞を受賞。LLP全国大会への進出が決まりました。</p></div><a class="detail-link" href="https://www.hmcc.jp/2025/09/30/hmcc_llp_demoday/" target="_blank" rel="noopener noreferrer">VIEW DETAILS ↗</a></article>
+      </div><p class="activities-foot">※活動内容は各公式掲載ページをもとに紹介しています。</p>
+    </div></section>
+    <section class="screen project" id="projects" aria-labelledby="projects-title"><div class="wrap project-layout">
+      <div class="project-copy reveal"><div class="eyebrow">Made together, thoughtfully</div><span class="team-tag">TEAM PROJECT</span><h2 id="projects-title">Process<br>Note</h2><p class="project-intro">完成した作品だけでなく、つくる途中の思考や変化も残す。制作の「過程」を記録・整理するチームプロジェクトです。</p><div class="contribution"><h3>MY CONTRIBUTION</h3><p><b>アイデア出し・企画</b> ／ <b>サービス設計・デザイン</b> ／ <b>プレゼンテーション</b><br>チームメンバーと協力して企画・提案しました。</p></div><a class="pill project-link" href="https://shard-ziconium-24b.notion.site/Process-Note-2d4c35f8b877808eb2a6d40d985bf8d9?source=copy_link" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true">✧</span>ProcessNote を見る ↗</a></div>
+      <div class="reveal"><figure class="project-visual"><img src="assets/processnote-cover.jpg" alt="Process Noteの紹介資料。制作過程を記録・整理するサービスの概要" loading="lazy"><figcaption class="visual-caption">A NOTE FOR EVERY CREATIVE PROCESS</figcaption></figure><p class="visual-caption">制作の変化を記録 · 意思決定の理由を可視化 · 振り返りとポートフォリオに活用</p></div>
+    </div></section>
+    <section class="screen contact" id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="contact-panel reveal"><div class="contact-heart" aria-hidden="true">♡</div><div class="eyebrow" style="justify-content:center">Good things start with a hello</div><h2 id="contact-title">LET'S<br>CONNECT!</h2><div class="social-row"><a class="pill" href="https://www.instagram.com/_m__123o" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true">♡</span>Instagram ↗</a><a class="pill" href="https://github.com/harumi-dev" target="_blank" rel="noopener noreferrer"><span class="icon" aria-hidden="true">⌘</span>GitHub ↗</a></div><p class="thankyou">✦ THANK YOU FOR VISITING! ✦</p><a class="back-top" href="#intro">↑ BACK TO THE TOP</a></div></div><div class="footer">© HARUMI SATO · TURNING IDEAS INTO REALITY</div></section>
+  </main>
+  <script>
+    // Edit the site's content and links here; styling and motion are controlled by CSS variables above.
+    const portfolioData = {
+      name: "HARUMI SATO", tagline: "Turning ideas into reality.",
+      socials: { instagram: "https://www.instagram.com/_m__123o", github: "https://github.com/harumi-dev" },
+      sections: ["intro", "activities", "projects", "contact"],
+      projects: [{ name: "ProcessNote", team: true, contribution: ["アイデア出し・企画", "サービス設計・デザイン", "プレゼンテーション"] }]
+    };
+    var introLayer = document.getElementById("intro-layer");
+    function finishOpening() {
+      if (introLayer) introLayer.classList.add("done");
+    }
+    // Start the normal exit immediately. The independent head timer above is the hard fallback.
+    window.setTimeout(finishOpening, 1150);
+    if (introLayer) introLayer.addEventListener("click", finishOpening);
 
-      
-      
-        
-            <h2>Business Contest</h2>
-          
-            <div class="contest-card">
-              <h3>LLP北海道 2025</h3>
-              <p>HMCCが主催する「LLP」のDemoDayが開催されました！</p>
-              <a href="https://www.hmcc.jp/2025/09/30/hmcc_llp_demoday/" target="_blank" class="contest-btn">
-                詳細を見る
-              </a>
-            </div>
-          
-            <div class="contest-card">
-              <h3>北海道起業家甲子園 2025</h3>
-              <p>「北海道起業家甲子園2025」に出場しました！</p>
-              <a href="https://www.soumu.go.jp/soutsu/hokkaido/C/u-Land/20251217.html" target="_blank" class="contest-btn">
-                詳細を見る
-              </a>
-            </div>
-          
-          </div>
-      </div>
+    var navLinks = Array.prototype.slice.call(document.querySelectorAll(".side-nav a"));
+    var sections = portfolioData.sections.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    function setActiveSection(section) {
+      navLinks.forEach(function (link) {
+        var active = link.hash === "#" + section.id;
+        link.classList.toggle("active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }
+    function updateActiveSection() {
+      var marker = window.innerHeight * 0.45;
+      var current = sections[0];
+      sections.forEach(function (section) {
+        if (section.getBoundingClientRect().top <= marker) current = section;
+      });
+      if (current) setActiveSection(current);
+    }
 
-    </div>
+    try {
+      if ("IntersectionObserver" in window) {
+        var activeObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) setActiveSection(entry.target);
+          });
+        }, { rootMargin: "-38% 0px -38% 0px", threshold: 0 });
+        sections.forEach(function (section) { activeObserver.observe(section); });
 
-    <div class="section">
-      <h3>About Me</h3>
-      <p>在学中にサービスをリリースすることが目標です！
-        現在はProcessNoteというサービスの開発をメインに行なっています。
-      </p>
-    </div>
-
-    <div class="section">
-        <h3>Skills</h3>
-      
-        <div class="skills">
-          <span class="skill-tag">HTML</span>
-          <span class="skill-tag">CSS</span>
-          <span class="skill-tag">JavaScript</span>
-        </div>
-      </div>
-
-    <button onclick="addMessage()">応援する</button>
-    <p id="message"></p>
-
-
-  </div>
-<script>
-  function addMessage() {
-    document.getElementById("message").innerText =
-      "開発頑張ります！🔥";
-  }
-</script>
-
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05 });
+        document.querySelectorAll(".reveal").forEach(function (element) { revealObserver.observe(element); });
+        document.documentElement.classList.add("motion-ready");
+      } else {
+        // Older mobile browsers keep all content visible and still update the current nav item.
+        window.addEventListener("scroll", updateActiveSection, false);
+        window.addEventListener("resize", updateActiveSection, false);
+        updateActiveSection();
+      }
+    } catch (error) {
+      // A scroll-animation failure must never hide the page or strand the opening overlay.
+      document.documentElement.classList.remove("motion-ready");
+      finishOpening();
+      if (window.console && console.warn) console.warn("Portfolio animation fallback:", error);
+    }
+  </script>
 </body>
 </html>
